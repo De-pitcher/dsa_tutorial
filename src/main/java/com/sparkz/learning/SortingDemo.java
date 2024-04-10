@@ -1,7 +1,18 @@
 package com.sparkz.learning;
 
+/**
+ * This class provides various sorting algorithms implementations such as bubble
+ * sort,
+ * selection sort, insertion sort, quick sort, and merge sort.
+ */
 public class SortingDemo {
 
+    /**
+     * Prints the contents of the array along with a message.
+     * 
+     * @param array The array to be printed.
+     * @param msg   The message to be printed before the array.
+     */
     public static void printArray(int[] array, String msg) {
         System.out.print(msg + ": ");
         for (var i : array) {
@@ -10,6 +21,11 @@ public class SortingDemo {
         System.out.println();
     }
 
+    /**
+     * Sorts an array of integers using the bubble sort algorithm.
+     * 
+     * @param array The array to be sorted.
+     */
     static void bubbleSort(int[] array) {
         int size = array.length;
         int tmp;
@@ -26,6 +42,11 @@ public class SortingDemo {
         }
     }
 
+    /**
+     * Sorts an array of integers using the selection sort algorithm.
+     * 
+     * @param array The array to be sorted.
+     */
     public static void selectionSort(int[] array) {
         int size = array.length;
         int tmp;
@@ -44,6 +65,11 @@ public class SortingDemo {
         }
     }
 
+    /**
+     * Sorts an array of integers using the insertion sort algorithm.
+     * 
+     * @param array The array to be sorted.
+     */
     public static void insertionSort(int[] array) {
         int size = array.length;
         int key = -1;
@@ -62,6 +88,13 @@ public class SortingDemo {
         }
     }
 
+    /**
+     * Sorts an array of integers using the quick sort algorithm.
+     * 
+     * @param array The array to be sorted.
+     * @param low   The starting index of the array.
+     * @param high  The ending index of the array.
+     */
     public static void quickSort(int[] array, int low, int high) {
         if (low < high) {
             int pivot = partition(array, low, high);
@@ -70,6 +103,14 @@ public class SortingDemo {
         }
     }
 
+    /**
+     * Partitions the array for quick sort.
+     * 
+     * @param array The array to be partitioned.
+     * @param low   The starting index of the partition.
+     * @param high  The ending index of the partition.
+     * @return The index of the pivot element.
+     */
     private static int partition(int[] array, int low, int high) {
         int pivot = array[high];
         int i = low - 1;
@@ -88,6 +129,13 @@ public class SortingDemo {
         return i + 1;
     }
 
+    /**
+     * Sorts an array of integers using the merge sort algorithm.
+     * 
+     * @param array The array to be sorted.
+     * @param left  The left index of the array.
+     * @param right The right index of the array.
+     */
     public static void mergeSort(int[] array, int left, int right) {
         if (left < right) {
             int mid = (left + right) / 2;
@@ -97,6 +145,14 @@ public class SortingDemo {
         }
     }
 
+    /**
+     * Merges two sorted subarrays into a single sorted array.
+     * 
+     * @param array The array to be merged.
+     * @param left  The left index of the array.
+     * @param mid   The middle index of the array.
+     * @param right The right index of the array.
+     */
     private static void merge(int[] array, int left, int mid, int right) {
         int n1 = mid - left + 1;
         int n2 = right - mid;
