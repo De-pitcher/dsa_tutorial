@@ -1,3 +1,6 @@
+/**
+ * Represents a simple queue implementation using an array.
+ */
 package com.sparkz.learning;
 
 public class Queue {
@@ -7,6 +10,9 @@ public class Queue {
     private int front;
     private int rear;
 
+    /**
+     * Constructs an empty queue with an initial capacity of 10.
+     */
     public Queue() {
         queue = new int[INITIAL_CAPACITY];
         front = 0;
@@ -14,14 +20,29 @@ public class Queue {
         currentSize = 0;
     }
 
+    /**
+     * Checks if the queue is empty.
+     * 
+     * @return true if the queue is empty, false otherwise.
+     */
+
     public boolean isEmpty() {
         return currentSize == 0;
     }
 
+    /**
+     * Checks if the queue is full.
+     * 
+     * @return true if the queue is full, false otherwise.
+     */
     public boolean isFull() {
         return currentSize == queue.length;
     }
 
+    /**
+     * Displays the elements of the queue.
+     * If the queue is empty, prints "Queue is empty."
+     */
     public void show() {
         if (isEmpty()) {
             System.out.println("Queue is empty.");
@@ -38,10 +59,20 @@ public class Queue {
         System.out.println();
     }
 
+    /**
+     * Gets the current size of the queue.
+     * 
+     * @return The number of elements in the queue.
+     */
     public int getSize() {
         return currentSize;
     }
 
+    /**
+     * Converts the queue to an array.
+     * 
+     * @return An array containing the elements of the queue.
+     */
     public int[] toArray() {
         int[] array = new int[currentSize];
         int index = 0;
@@ -53,6 +84,11 @@ public class Queue {
         return array;
     }
 
+    /**
+     * Adds an element to the rear of the queue.
+     * 
+     * @param data The element to be added.
+     */
     public void enqueue(int data) {
         if (isFull()) {
             resize();
@@ -62,6 +98,9 @@ public class Queue {
         currentSize++;
     }
 
+    /**
+     * Resizes the array if it is full.
+     */
     private void resize() {
         int newCapacity = queue.length * 2;
         int[] newArray = new int[newCapacity];
@@ -74,6 +113,11 @@ public class Queue {
         queue = newArray;
     }
 
+    /**
+     * Removes and returns the element at the front of the queue.
+     * 
+     * @return The element removed from the front of the queue.
+     */
     public int dequeue() {
         if (isEmpty()) {
             System.out.println("Queue is empty. Cannot dequeue.");
@@ -85,6 +129,9 @@ public class Queue {
         return data;
     }
 
+    /**
+     * Clears the queue by resetting front, rear, and currentSize.
+     */
     public void clear() {
         front = 0;
         rear = -1;
