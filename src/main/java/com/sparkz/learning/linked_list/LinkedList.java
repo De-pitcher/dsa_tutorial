@@ -27,7 +27,7 @@ public class LinkedList {
      * 
      * @return An array containing the elements of the linked list.
      */
-    public int[] toList() {
+    public int[] toArray() {
         int list[] = new int[size()];
         Node node = head;
 

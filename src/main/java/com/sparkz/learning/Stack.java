@@ -35,7 +35,7 @@ public class Stack {
      * 
      * @return An array representation of the stack.
      */
-    public int[] toList() {
+    public int[] toArray() {
         return stack;
     }
 

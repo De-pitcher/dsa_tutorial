@@ -36,7 +36,7 @@ public class DynamicStack {
      * 
      * @return The array representation of the stack.
      */
-    public int[] toList() {
+    public int[] toArray() {
         return stack;
     }
 

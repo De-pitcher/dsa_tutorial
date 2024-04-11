@@ -31,7 +31,7 @@ public class StackTest {
         System.out.print("After push test: ");
         stack.show();
 
-        assertArrayEquals(expected, stack.toList());
+        assertArrayEquals(expected, stack.toArray());
         stack.clearAllData();
     }
 
@@ -43,7 +43,7 @@ public class StackTest {
         stack.push(4);
         stack.push(5);
 
-        int expected[] = { 0, 0, 0, 0, 0};
+        int expected[] = { 0, 0, 0, 0, 0 };
         // { 1, 2, 3, 4, 0 };
 
         System.out.print("Before pop test: ");
@@ -59,7 +59,7 @@ public class StackTest {
         System.out.print("After pop test: ");
         stack.show();
 
-        assertArrayEquals(expected, stack.toList());
+        assertArrayEquals(expected, stack.toArray());
         stack.clearAllData();
     }
 

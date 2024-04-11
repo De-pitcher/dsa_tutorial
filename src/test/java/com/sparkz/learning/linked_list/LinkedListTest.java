@@ -23,7 +23,7 @@ public class LinkedListTest {
         System.out.print("After insert: ");
         list.show();
 
-        assertArrayEquals(expected, list.toList());
+        assertArrayEquals(expected, list.toArray());
         list.clear();
         System.out.println();
     }
@@ -40,7 +40,7 @@ public class LinkedListTest {
         System.out.print("After insertAtStart: ");
         list.show();
 
-        assertArrayEquals(expected, list.toList());
+        assertArrayEquals(expected, list.toArray());
         list.clear();
         System.out.println();
     }
@@ -52,12 +52,12 @@ public class LinkedListTest {
         list.insert(4);
         System.out.print("Before insertAt: ");
         list.show();
-        list.insertAt(1,2);
+        list.insertAt(1, 2);
         int expected[] = { 1, 2, 3, 4 };
         System.out.print("After insertAt: ");
         list.show();
 
-        assertArrayEquals(expected, list.toList());
+        assertArrayEquals(expected, list.toArray());
         list.clear();
         System.out.println();
     }
@@ -76,7 +76,7 @@ public class LinkedListTest {
         System.out.print("After deleteAt: ");
         list.show();
 
-        assertArrayEquals(expected, list.toList());
+        assertArrayEquals(expected, list.toArray());
         list.clear();
     }
 }

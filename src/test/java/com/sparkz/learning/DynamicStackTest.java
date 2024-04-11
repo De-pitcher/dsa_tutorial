@@ -29,7 +29,7 @@ public class DynamicStackTest {
         System.out.print("After push test: ");
         stack.show();
 
-        assertArrayEquals(expected, stack.toList());
+        assertArrayEquals(expected, stack.toArray());
         stack.clearAllData();
     }
 
@@ -54,7 +54,7 @@ public class DynamicStackTest {
         System.out.print("After pop test: ");
         stack.show();
 
-        assertArrayEquals(expected, stack.toList());
+        assertArrayEquals(expected, stack.toArray());
         stack.clearAllData();
     }
 
