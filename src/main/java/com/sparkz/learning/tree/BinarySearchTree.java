@@ -1,3 +1,6 @@
+/**
+ * Represents a binary search tree (BST) data structure.
+ */
 package com.sparkz.learning.tree;
 
 import java.util.ArrayList;
@@ -6,6 +9,11 @@ import java.util.List;
 public class BinarySearchTree {
     Node root;
 
+    /**
+     * Inserts a new node with the given data into the BST.
+     * 
+     * @param data The data to be inserted.
+     */
     public void insert(int data) {
         root = insertRect(root, data);
     }
@@ -21,9 +29,14 @@ public class BinarySearchTree {
         return root;
     }
 
+    /**
+     * Converts the elements of the BST to an array in ascending order.
+     * 
+     * @return An array containing the elements of the BST in ascending order.
+     */
     public int[] toArray() {
         List<Integer> resultList = new ArrayList<>();
-        inOrderTraversal(root, resultList);
+        inorderTraversal(root, resultList);
         // Convert ArrayList to array
         int[] resultArray = new int[resultList.size()];
         for (int i = 0; i < resultList.size(); i++) {
@@ -32,14 +45,17 @@ public class BinarySearchTree {
         return resultArray;
     }
 
-    private void inOrderTraversal(Node root, List<Integer> result) {
+    private void inorderTraversal(Node root, List<Integer> result) {
         if (root != null) {
-            inOrderTraversal(root.left, result);
+            inorderTraversal(root.left, result);
             result.add(root.data);
-            inOrderTraversal(root.right, result);
+            inorderTraversal(root.right, result);
         }
     }
 
+    /**
+     * Prints the elements of the BST in ascending order.
+     */
     public void inorder() {
         System.out.print("Elements in the BST: ");
         inorderRec(root);
